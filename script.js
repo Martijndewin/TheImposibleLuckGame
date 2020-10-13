@@ -8,244 +8,257 @@ Date Modified: 10/12/20
 Date Modified: 10/13/20
 */
 // * This is where I hold my made Object/class
-class Questons{
-    constructor(q, a1,a2,a3,a4){
-        this.queston = q; 
-        this.answer1 = a1;
-        this.answer2 = a2;
-        this.answer3 = a3;
-        this.answer4 = a4;
+class Questons {
+    constructor(q, a1, a2, a3, a4) {
+        this.queston = q;
+        this.answer1 = `<button class ='questions' value = '1' id='an1' >${a1}</button>`;
+        this.answer2 = `<button class ='questions' value = '2' id='an2' >${a2}</button>`;
+        this.answer3 = `<button class ='questions' value = '3' id='an3' >${a3}</button>`;
+        this.answer4 = `<button class ='questions' value = '4' id='an4' >${a4}</button>`;
     }
 
-    updateQuestonArea(){
-        var grabDiv = document.getElementById('questionsDisplay');
+    updateQuestonArea() {
+        var grabDiv = document.getElementById("questionsDisplay");
         grabDiv.innerHTML = "";
-        grabDiv.innerHTML += "<h1 class= 'words'>" + this.queston + "</h1> "
-        var grabDiv2 = document.getElementById('ansersDiplayBtn');
+        grabDiv.innerHTML += "<h1 class= 'words'>" + this.queston + "</h1> ";
+        var grabDiv2 = document.getElementById("answersDiplayBtn");
         grabDiv2.innerHTML = "";
-        grabDiv2.innerHTML += `${this.answer1} ${this.answer2} ${this.answer3} ${this.answer4}`
-
+        grabDiv2.innerHTML += `${this.answer1} ${this.answer2} ${this.answer3} ${this.answer4}`;
     }
-
 }
+// define 'global' variables here so it will be accessable inside any function (look up scope) https://developer.mozilla.org/en-US/docs/Glossary/Scope
+var questionArray = [];
+var randomGen = Math.floor(Math.random() * 4 + 1);
 
-// here im making quetions fro my class
-var Q1 = new Questons("What Grade should I get?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >100%</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>200%</button>",
-    "<button class ='questions' value ='3' id='an3' >300%</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>4000%</button>");
-var Q2 = new Questons("what is the color of the sky?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Red</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>Magenta</button>",
-    "<button class ='questions' value ='3' id='an3' >Pink</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Blue</button>");
-var Q3 = new Questons("What is a cooler mame?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Jim</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>Tim</button>",
-    "<button class ='questions' value ='3' id='an3' >Tina</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Jane</button>");
-var Q4 = new Questons("Where is Your cat?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >What Cat?</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>Home</button>",
-    "<button class ='questions' value ='3' id='an3' >Vet</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Mittens?</button>");
-var Q5 = new Questons("Who are you?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >THE PRESIDENT</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>ME, DUH</button>",
-    "<button class ='questions' value ='3' id='an3' >NOBODY</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>SOMEBODY</button>");
-var Q6 = new Questons("What fish would you be?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Shark!</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>Zebra Fish</button>",
-    "<button class ='questions' value ='3' id='an3' >Dalphine</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>CatFish</button>");
-var Q7 = new Questons("What's a sekeletons Favorite snack?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >SpareRibs</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>Ribeye</button>",
-    "<button class ='questions' value ='3' id='an3' >bonless Ribs</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Jawbreakers</button>");
-var Q8 = new Questons("Where IS SHREK?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >MY SWAMP</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>His SWAMP</button>",
-    "<button class ='questions' value ='3' id='an3' >OUR SWAMP</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>6ft under</button>");
-var Q9 = new Questons("why is 6 afraid of 7?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >789</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>7 ate 9</button>",
-    "<button class ='questions' value ='3' id='an3' >7 eight 9</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>hes not!</button>");
-var Q10 = new Questons("whats is the meaning of life?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >CODE</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>42</button>",
-    "<button class ='questions' value ='3' id='an3' >Games</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Nothing</button>");
-var Q11 = new Questons("Help Ive fallen and i cant get up?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >LIFEALERT</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>lifealert</button>",
-    "<button class ='questions' value ='3' id='an3' >LIfeAlert</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>ALertLIFE</button>");
-var Q12 = new Questons("what is the best season?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >PEPPER</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>CARJUN</button> ",
-    "<button class ='questions' value ='3' id='an3' >SUMMER</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>DEER</button>");
-var Q13 = new Questons("How do you make a pirate ferrious?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Steal His Booty</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>take away the p</button>",
-    "<button class ='questions' value ='3' id='an3' >call him polly</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>arrest him</button>");
-var Q14 = new Questons("what do among us players eat?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Impasta</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>O2</button>",
-    "<button class ='questions' value ='3' id='an3' >Reactor</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Comms</button>");
-var Q15 = new Questons("What's the difference between a guitar and a fish?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Wood?</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>fish breaths</button>",
-    "<button class ='questions' value ='3' id='an3' >you cant tuna fish</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>fish are animals</button>");
-var Q20 = new Questons("What do you call a gangsta snowman?",
-    "<button  type= 'submit' class ='questions' value = '1' id='an1' >Froze-T</button>",
-    "<button  type= 'submit' class ='questions'  value = '2' id='an2'>Ice-T</button>",
-    "<button class ='questions' value ='3' id='an3' >Silly, snowman cant be gangsta</button>",
-    "<button  type= 'submit' class ='questions'  value = '4' id='an4'>Frosty</button>");
- 
+// * end classes
 
-// here im turning them into an array 
-var questionsAry = [];
-questionsAry.push(Q1);
-questionsAry.push(Q2);
-questionsAry.push(Q3);
-questionsAry.push(Q4);
-questionsAry.push(Q5);
-questionsAry.push(Q6);
-questionsAry.push(Q7);
-questionsAry.push(Q8);
-questionsAry.push(Q9);
-questionsAry.push(Q10);
-questionsAry.push(Q11);
-questionsAry.push(Q12);
-questionsAry.push(Q13);
-questionsAry.push(Q14);
-questionsAry.push(Q15);
-questionsAry.push(Q20);
+//calling everything to the load.
+window.addEventListener("load", intializePage);
 
-
-//calling everything to the load. 
-window.addEventListener('load', intializePage);
-  
 function intializePage() {
+    _loadQuestions();
     start();
 }
-var i = 0;
 //* START FUNCTION!!!!
-function start(){
-    var startMessage = document.getElementById('questionsDisplay');
-    startMessage.innerHTML = "";
-    startMessage.innerHTML += "<h1 class= 'words'> Welcom to the IMPOSIBLE LUCK QUIZ! </h1> "
-    var startBtn = document.getElementById('movementHousing');
-    startBtn.innerHTML = "<button class ='navigationButtons' vlaue = 'start' id = 'start'> START HERE </button>"
-    document.getElementById('start').addEventListener("click", questionSwapping);
-    var emptyAnswers = document.getElementById('ansersDiplayBtn');
-    emptyAnswers.style.display= "none";
-    i = 0;
+function start() {
+    var startMessage = document.getElementById("questionsDisplay");
+    startMessage.innerHTML =
+        "<h1 class= 'words'> Welcom to the IMPOSIBLE LUCK QUIZ! </h1> ";
+    var startBtn = document.getElementById("movementHousing");
+    startBtn.innerHTML =
+        "<button class ='navigationButtons' vlaue = 'start' id = 'start'> START HERE </button>";
+    document.getElementById("start").addEventListener("click", startQuiz);
+    var emptyAnswers = document.getElementById("answersDiplayBtn");
+    emptyAnswers.innerHTML = "";
 }
-
-
- var randomGen = Math.floor((Math.random()*4)+1);
-
-
-i = 0;
 
 /* 
 here Im truning the start button into the next button, and call the id of all buttons 
 on click to then send their value of them though an if satement to determine if they are the right answer
 */
-function questionSwapping(){
-    var startBtn = document.getElementById('movementHousing');
-    startBtn.innerHTML = "<button class ='navigationButtons' vlaue = 'next' id = 'next'> Submit </button>"
-    questionRotation();
+function startQuiz() {
+    // as long as there are remaining questions, load the next one. If not, load win screen or something
+    var startBtn = document.getElementById("movementHousing");
+    startBtn.innerHTML =
+        "<button class ='navigationButtons' vlaue = 'next' id = 'next'> Submit </button>";
+    // try to name functions with verb since they usually do something. LOADnextQuestion
+    loadNextQuestion();
 }
 
-function questionRotation(){
-    document.getElementById('ansersDiplayBtn').style.display= "inline";
-    var runs = 0;
-    var count = 0;
+function loadNextQuestion() {
+    document.getElementById("answersDiplayBtn").style.display = "inline";
 
-    while(count <= questionsAry.length ){
-        if(count <= questionsAry.length){
-        document.getElementById('ansersDiplayBtn').style.display= "inline";
-        while( runs < 1){
-            console.log(questionsAry[i]);
-            questionsAry[i].updateQuestonArea();
-            i++;
-            runs++;
-            randomGen;
-            }
-        count++;
+    questionArray.shift().updateQuestonArea();
 
-        var valueOfClick1 = document.getElementById('an1');
-        valueOfClick1.addEventListener("click", clickingValues);
-        var valueOfClick2 = document.getElementById('an2');
-        valueOfClick2.addEventListener("click", clickingValues);
-        var valueOfClick3 = document.getElementById('an3');
-        valueOfClick3.addEventListener("click", clickingValues);
-        var valueOfClick4 = document.getElementById('an4');
-        valueOfClick4.addEventListener("click", clickingValues);
-    
-        console.log("random: " + randomGen);
-        console.log(valueOfClick1);
-        console.log(valueOfClick3);
-        console.log(valueOfClick2);
-        console.log(valueOfClick1);
+    var valueOfClick1 = document.getElementById("an1");
+    valueOfClick1.addEventListener("click", clickingValues);
+    var valueOfClick2 = document.getElementById("an2");
+    valueOfClick2.addEventListener("click", clickingValues);
+    var valueOfClick3 = document.getElementById("an3");
+    valueOfClick3.addEventListener("click", clickingValues);
+    var valueOfClick4 = document.getElementById("an4");
+    valueOfClick4.addEventListener("click", clickingValues);
 
-        }else{
-            
-            var endMessage = document.getElementById('questionsDisplay');
-            endMessage.innerHTML = "";
-            endMessage.innerHTML += "<h1 class= 'words'> YOU DID TI! YOU BEAT THE GAME! </h1> "
-            var again = document.getElementById('movementHousing');
-            again.innerHTML = "<button class ='navigationButtons' vlaue = 'again' id = 'again'> AGAIN! </button>"
-            document.getElementById('again').addEventListener("click", start);
-            randomGen = Math.floor((Math.random()*4)+1);
-            var emptyAnswers = document.getElementById('ansersDiplayBtn');
-            emptyAnswers.style.display= "none";
-            
-        }
-    }
-
-    
+    console.log("random: " + randomGen);
 }
 
 //this functoin is pulling the vales of the target witch are the buttons clicked.
-function clickingValues(e){
-
-    console.log(e.target);
-    console.log(e.target.value);
-    validAnswer( e.target);
-
-
+function clickingValues(e) {
+    validAnswer(e.target);
 }
-function validAnswer(answer){
+
+function validAnswer(answer) {
     var val = answer.value;
-    if(randomGen == val){
+    if (randomGen == val) {
         alert("YAY! You got it!");
-        document.getElementById('next').addEventListener("click", questionNextBtn);
-        randomGen = Math.floor((Math.random()*4)+1);
-    }else{
+        // load next question after celebrating
+        if (questionArray.length) {
+            randomGen = Math.floor(Math.random() * 4 + 1);
+            loadNextQuestion();
+        } else {
+            // YOU WON YEAAAAA WHOOOO
+            var endMessage = document.getElementById("questionsDisplay");
+            endMessage.innerHTML =
+                "<h1 class= 'words'> YOU DID TI! YOU BEAT THE GAME! </h1> ";
+            var again = document.getElementById("movementHousing");
+            again.innerHTML =
+                "<button class ='navigationButtons' vlaue = 'again' id = 'again'> AGAIN! </button>";
+            document
+                .getElementById("again")
+                .addEventListener("click", intializePage);
+            randomGen = Math.floor(Math.random() * 4 + 1);
+            var emptyAnswers = document.getElementById("answersDiplayBtn");
+            emptyAnswers.style.display = "none";
+        }
+    } else {
         alert("THIS IS NOT THE ANSWER, you must go back to start.");
-        document.getElementById('next').addEventListener("click", start);
-        randomGen = Math.floor((Math.random()*4)+1);
+        // reset
+        randomGen = Math.floor(Math.random() * 4 + 1);
+        intializePage();
     }
-
-    console.log(answer);
-    
 }
 
-// this send the console the random thats generated, and adds an listener to the next button to move on to the next quetion roation
-function questionNextBtn(){
-    console.log("random: " + randomGen);
-    document.getElementById('next').addEventListener("click", questionRotation)
-}
+function _loadQuestions() {
+    // empty array in case it still has something in it
+    questionArray = [];
 
+    // here im making quetions fro my class
+    questionArray.push(
+        new Questons(
+            "What Grade should I get?",
+            "100%",
+            "200%",
+            "300%",
+            "4000%"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "what is the color of the sky?",
+            "Red",
+            "Magenta",
+            "Pink",
+            "Blue"
+        )
+    );
+    questionArray.push(
+        new Questons("What is a cooler mame?", "Jim", "Tim", "Tina", "Jane")
+    );
+    questionArray.push(
+        new Questons(
+            "Where is Your cat?",
+            "What Cat?",
+            "Home",
+            "Vet",
+            "Mittens?"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "Who are you?",
+            "THE PRESIDENT",
+            "ME, DUH",
+            "NOBODY",
+            "SOMEBODY"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "What fish would you be?",
+            "Shark!",
+            "Zebra Fish",
+            "Dalphine",
+            "CatFish"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "What's a sekeletons Favorite snack?",
+            "SpareRibs",
+            "Ribeye",
+            "bonless Ribs",
+            "Jawbreakers"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "Where IS SHREK?",
+            "MY SWAMP",
+            "His SWAMP",
+            "OUR SWAMP",
+            "6ft under"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "why is 6 afraid of 7?",
+            "789",
+            "7 ate 9",
+            "7 eight 9",
+            "hes not!"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "whats is the meaning of life?",
+            "CODE",
+            "42",
+            "Games",
+            "Nothing"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "Help Ive fallen and i cant get up?",
+            "LIFEALERT",
+            "lifealert",
+            "LIfeAlert",
+            "ALertLIFE"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "what is the best season?",
+            "PEPPER",
+            "CARJUN ",
+            "SUMMER",
+            "DEER"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "How do you make a pirate ferrious?",
+            "Steal His Booty",
+            "take away the p",
+            "call him polly",
+            "arrest him"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "what do among us players eat?",
+            "Impasta",
+            "O2",
+            "Reactor",
+            "Comms"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "What's the difference between a guitar and a fish?",
+            "Wood?",
+            "fish breaths",
+            "you cant tuna fish",
+            "fish are animals"
+        )
+    );
+    questionArray.push(
+        new Questons(
+            "What do you call a gangsta snowman?",
+            "Froze-T",
+            "Ice-T",
+            "Silly, snowman cant be gangsta",
+            "Frosty"
+        )
+    );
+}
